@@ -1,0 +1,86 @@
+{% extends 'emoji_password_evaluation/base.html' %}
+{% block body %}
+<script>
+    let words = [];
+    let currentWordIndex = 0;
+    let displayDuration = 1000;
+    let startTime;
+
+    function startQuiz() {
+        fetch('/get-all-words/')
+            .then(response => response.json())
+            .then(data => {
+                words = data.words;
+                displayNextWord();
+            });
+            document.getElementById('start-button').style.display = 'none';
+    }
+
+    function displayNextWord() {
+        if (currentWordIndex < words.length) {
+            const word = words[currentWordIndex];
+            displayWord(word);
+            currentWordIndex++;
+        } else {
+            alert("Moves on to part 2 of quiz");
+        }
+    }
+
+    function displayWord(word) {
+        const wordContainer = document.getElementById('word-container');
+        wordContainer.innerText = word;
+
+        setTimeout(() => {
+            wordContainer.innerText = '';
+            document.getElementById('response-form').style.display = 'block';
+            startTime = new Date().getTime();
+        }, displayDuration);
+    }
+
+    function submitResponse() {
+        const response = document.getElementById('response-input').value;
+        const word = words[currentWordIndex - 1]; // Get the last displayed word
+        const endTime = new Date().getTime();
+        const duration = endTime - startTime;
+
+        fetch('/save-response/', {
+            method: 'POST',
+            body: JSON.stringify({word: word, response: response, duration: duration}),
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': '{{ csrf_token }}'
+            }
+        }).then(() => {
+            document.getElementById('response-input').value = ''; // Clear input field
+            document.getElementById('response-form').style.display = 'none';
+            displayNextWord();
+        });
+    }
+
+</script>
+
+<h1>Part 1. Password Memorability Test</h1>
+<p>You're going to see a series of passwords flash on your screen. </p>
+<p>Try to remember them, becuz you need to recall them !!!</p>
+
+<button onclick="startQuiz()" id="start-button">Start Quiz</button>
+
+<div id="word-container" style="font-size: 24px; margin-bottom: 20px;"></div>
+
+<div id="response-form" style="display: none;">
+    <input type="text" id="response-input">
+    <button onclick="submitResponse()">Submit</button>
+</div>
+
+<div id="emoji-keyboard">
+    <button class="emoji-btn">😀</button>
+    <button class="emoji-btn">😂</button>
+    <button class="emoji-btn">😍</button>
+    <button class="emoji-btn">😘</button>
+    <button class="emoji-btn">😡</button>
+    <button class="emoji-btn">🥶</button>
+    <button class="emoji-btn">😎</button>
+    <button class="emoji-btn">😢</button>
+    <button class="emoji-btn">😠</button>
+</div>
+{% endblock %}
