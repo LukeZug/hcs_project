@@ -1,13 +1,18 @@
-#emoji-keyboard {
+.emoji-keyboard {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     margin-bottom: 20px;
-    padding: 10px 500px;
+    padding: 10px 0;
 }
 
 .emoji-btn {
     font-size: 40px;
     padding: 10px;
     cursor: pointer;
+}
+
+.response-form {
+    width: 400px;
+    margin: 0 auto;
 }

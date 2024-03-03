@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Word, UserResponse
+from .models import PasswordChoice, PasswordGuess
 
 # Register your models here.
-admin.site.register(Word)
-admin.site.register(UserResponse)
+admin.site.register(PasswordChoice)
+admin.site.register(PasswordGuess)

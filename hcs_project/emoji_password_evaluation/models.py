@@ -1,11 +1,11 @@
 from django.db import models
 
 # Create your models here.
-class Word(models.Model):
-    text = models.TextField()
-    
-class UserResponse(models.Model):
-    word_text = models.TextField()
-    user_input = models.TextField()
-    duration = models.IntegerField(null=True)
+class PasswordChoice(models.Model):
+    password = models.TextField()
+    identifier = models.TextField()
+
+class PasswordGuess(models.Model):
+    identifier = models.TextField()
+    password_guess = models.TextField()
     

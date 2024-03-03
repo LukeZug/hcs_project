@@ -21,7 +21,5 @@ from emoji_password_evaluation import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('emojis/', include('emoji_password_evaluation.urls')),
-    path('get-all-words/', views.get_all_words, name='get-all-words'),
-    path('save-response/', views.save_response, name='save-response'),
-    path('', views.index, name='index'),
+    path('', views.part_1, name='part_1'),
 ]

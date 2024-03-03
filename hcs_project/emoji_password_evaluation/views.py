@@ -1,30 +1,56 @@
-from django.shortcuts import render
-from django.http import JsonResponse
+from django.shortcuts import render, redirect
+from django.http import HttpResponse
 from django.views.decorators.http import require_http_methods
-from .models import Word, UserResponse
+from .models import PasswordChoice, PasswordGuess
 import random
-import json
 
 # Create your views here.
-def index(request):
+def part_1(request):
     context = {}
-    return render(request, 'emoji_password_evaluation/index.html', context=context)
+    return render(request, 'emoji_password_evaluation/part_1.html', context=context)
 
-@require_http_methods(["GET"])
-def get_all_words(request):
-    word_ids = list(Word.objects.values_list('id', flat=True))
-    random.shuffle(word_ids)
-    words = [Word.objects.get(id=id).text for id in word_ids]
-    return JsonResponse({'words': words})
+def part_2(request):
+    context = {}
+    return render(request, 'emoji_password_evaluation/part_2.html', context=context)
 
-@require_http_methods(["POST"])
-def save_response(request):
-    # Extract the user's response and the word id
-    data = json.loads(request.body)
-    word_text = data.get('word')
-    user_input = data.get('response')
-    duration = data.get('duration')
+def part_3(request):
+    context = {}
+    return render(request, 'emoji_password_evaluation/part_3.html', context=context)
 
-    # Save the response
-    UserResponse.objects.create(word_text=word_text, user_input=user_input, duration=duration)
-    return JsonResponse({'status': 'success'})
+def submit_passwords(request):
+    if request.method == 'POST':
+        # Generate a random number
+        identifier = random.randint(100000, 999999)
+
+        # Process each password
+        for key in request.POST:
+            if key.startswith('password'):
+                password = request.POST[key]
+                PasswordChoice.objects.create(password=password, identifier=str(identifier))
+
+        # Set the identifier in the user's cookie
+        response = redirect('part_1')
+        response.set_cookie('identifier', identifier)
+
+        return response
+
+    return redirect('part_1')
+
+def submit_recall_passwords(request):
+    if request.method == 'POST':
+        identifier = request.COOKIES.get('identifier')
+
+        if not identifier:
+            return HttpResponse("Identifier not found.")
+
+        # Check each guess
+        for i in range(1, 7):
+            guess_key = f'guess{i}'
+            guess = request.POST.get(guess_key, '')
+
+            # Save the guess
+            PasswordGuess.objects.create(identifier=identifier, password_guess=guess)
+
+        return redirect('emoji_password_evaluation:part_3')
+
+    return redirect('emoji_password_evaluation:part_3')
