@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.views.decorators.http import require_http_methods
-from .models import PasswordChoice, PasswordGuess
+from .models import PasswordChoice, PasswordGuess, ShoulferSurferGuess
 import random
 
 # Create your views here.
@@ -29,7 +29,7 @@ def submit_passwords(request):
                 PasswordChoice.objects.create(password=password, identifier=str(identifier))
 
         # Set the identifier in the user's cookie
-        response = redirect('part_1')
+        response = redirect('emoji_password_evaluation:part_2')
         response.set_cookie('identifier', identifier)
 
         return response
@@ -51,6 +51,27 @@ def submit_recall_passwords(request):
             # Save the guess
             PasswordGuess.objects.create(identifier=identifier, password_guess=guess)
 
-        return redirect('emoji_password_evaluation:part_3')
+        return redirect('emoji_password_evaluation:finished')
 
     return redirect('emoji_password_evaluation:part_3')
+
+def submit_surfer_guesses(request):
+    if request.method == 'POST':
+        identifier = request.COOKIES.get('identifier')
+
+        # Process each password
+        question_number = 1
+        for key in request.POST:
+            if key.startswith('password'):
+                password = request.POST[key]
+                ShoulferSurferGuess.objects.create(identifier=str(identifier), password_guess=password, question_number=question_number)
+                question_number += 1
+
+        # Set the identifier in the user's cookie
+        response = redirect('emoji_password_evaluation:part_3')
+        return response
+
+    return redirect('emoji_password_evaluation:part_2')
+
+def finished(request):
+    return render(request, 'emoji_password_evaluation/finished.html', context={})
