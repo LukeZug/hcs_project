@@ -11,4 +11,6 @@ urlpatterns = [
     path('submit_recall_passwords/', views.submit_recall_passwords, name='submit_recall_passwords'),
     path('submit_surfer_guesses/', views.submit_surfer_guesses, name='submit_surfer_guesses'),
     path('finished/', views.finished, name='finished'),
+    path('instructions/', views.instructions_page, name='instructions'),
+    path('', views.part_1, name='part_1'),
 ]

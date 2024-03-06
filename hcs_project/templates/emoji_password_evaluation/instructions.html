@@ -1,0 +1,24 @@
+{% extends 'emoji_password_evaluation/base.html' %}
+{% block body %}
+
+<div class="container text-center mt-2">
+    <h1>Quiz Instructions</h1>
+
+    <p>In this Quiz you will first be asked to create 15 passwords</p>
+    <p>5 will be just text</p>
+    <p>5 will be just emojie based</p>
+    <p>5 should contain a combination of both text and emojies</p>
+
+    <p>the passwords should be of suitable length, more than 8 characters, make no effort to write them down or record them.</p>
+    <p>these passwords should NOT BE actual or versions of passwords you already use </p>
+    
+    <p> ---------------- </p>
+    <p>After you will be directed to another page where you should complete a quiz on guessing emojie passwords from a shoulder surf</p>
+    <p>----------------- </p>
+    <p>In the final section of the Quiz you will be asked to recall some of your original passwords </p>
+    <p>We are assessing the Memorability of the passwords in use, don't worry if you can't remeber them, we're just considering the best effort</p>
+    <a href="{% url 'emoji_password_evaluation:part_1' %}">Start Quiz</a>
+    
+</div>
+
+{% endblock %}

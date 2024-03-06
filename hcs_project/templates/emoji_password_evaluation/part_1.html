@@ -2,63 +2,50 @@
 {% block body %}
 
 <div class="container text-center mt-2">
-    <h1>Part 1) Password Memorability Evaluation</h1>
+    <h1>Part 1: Password Memorability Evaluation</h1>
 
     <form action="{% url 'emoji_password_evaluation:submit_passwords' %}" method="POST">
         {% csrf_token %}
+
+        <div>
+            <h2>  ---  </h2>
+            <h2> Text Only based passwords </h2>
+        </div>
         
         <div class="response-form mt-3">
             <p>1. Please create a password (do NOT include emojis):</p>
-            <input type="text" name="password1" id="response-input-1" class="form-control form-control-lg" required>
+            <input type="text" name="password1" id="response-input-1" class="form-control form-control-lg" minlength="9" title="Password must be more than 8 characters long" required>
         </div>
     
         <div class="response-form mt-3">
             <p>2. Please create a password (do NOT include emojis):</p>
-            <input type="text" name="password2" id="response-input-2" class="form-control form-control-lg" required>
+            <input type="text" name="password2" id="response-input-2" class="form-control form-control-lg" minlength="9" title="Password must be more than 8 characters long" required>
         </div>
     
         <div class="response-form mt-3">
             <p>3. Please create a password (do NOT include emojis):</p>
-            <input type="text" name="password3" id="response-input-3" class="form-control form-control-lg" required>
+            <input type="text" name="password3" id="response-input-3" class="form-control form-control-lg" minlength="9" title="Password must be more than 8 characters long" required>
+        </div>
+
+        <div class="response-form mt-3">
+            <p>4. Please create a password (do NOT include emojis):</p>
+            <input type="text" name="password4" id="response-input-4" class="form-control form-control-lg" minlength="9" title="Password must be more than 8 characters long" required>
+        </div>
+
+        <div class="response-form mt-3">
+            <p>5. Please create a password (do NOT include emojis):</p>
+            <input type="text" name="password5" id="response-input-5" class="form-control form-control-lg" minlength="9" title="Password must be more than 8 characters long" required>
+        </div>
+
+        <div>
+            <h2>  ---  </h2>
+            <h2> Only Emoji passwords </h2>
         </div>
     
         <div class="response-form mt-3">
-            <p>4. Please create a password (DO include emojis):</p>
-            <input type="text" name="password4" id="response-input-4" class="form-control form-control-lg" required>
+            <p>6. Please create a password (JUST emojis):</p>
+            <input type="text" name="password64" id="response-input-6" class="form-control form-control-lg" required>
             
-            <div class="emoji-keyboard mt-2" data-input-target="#response-input-4">
-                <button class="emoji-btn">😀</button>
-                <button class="emoji-btn">😂</button>
-                <button class="emoji-btn">😍</button>
-                <button class="emoji-btn">😘</button>
-                <button class="emoji-btn">😡</button>
-                <button class="emoji-btn">🥶</button>
-                <button class="emoji-btn">😎</button>
-                <button class="emoji-btn">😢</button>
-                <button class="emoji-btn">😠</button>
-            </div>    
-        </div>
-    
-        <div class="response-form mt-3">
-            <p>5. Please create a password (DO include emojis):</p>
-            <input type="text" name="password5" id="response-input-5" class="form-control form-control-lg" required>
-            
-            <div class="emoji-keyboard mt-2" data-input-target="#response-input-5">
-                <button class="emoji-btn">😀</button>
-                <button class="emoji-btn">😂</button>
-                <button class="emoji-btn">😍</button>
-                <button class="emoji-btn">😘</button>
-                <button class="emoji-btn">😡</button>
-                <button class="emoji-btn">🥶</button>
-                <button class="emoji-btn">😎</button>
-                <button class="emoji-btn">😢</button>
-                <button class="emoji-btn">😠</button>
-            </div>    
-        </div>
-    
-        <div class="response-form mt-3">
-            <p>6. Please create a password (DO include emojis):</p>
-            <input type="text" name="password6" id="response-input-6" class="form-control form-control-lg" required>
             <div class="emoji-keyboard mt-2" data-input-target="#response-input-6">
                 <button class="emoji-btn">😀</button>
                 <button class="emoji-btn">😂</button>
@@ -70,11 +57,206 @@
                 <button class="emoji-btn">😢</button>
                 <button class="emoji-btn">😠</button>
             </div>    
-            
-            <button type="submit" class="btn btn-success w-100 mt-1 mb-3">Next</button>
         </div>
-    </form>
     
+        <div class="response-form mt-3">
+            <p>7. Please create a password (JUST emojis):</p>
+            <input type="text" name="password7" id="response-input-7" class="form-control form-control-lg" required>
+            
+            <div class="emoji-keyboard mt-2" data-input-target="#response-input-7">
+                <button class="emoji-btn">😀</button>
+                <button class="emoji-btn">😂</button>
+                <button class="emoji-btn">😍</button>
+                <button class="emoji-btn">😘</button>
+                <button class="emoji-btn">😡</button>
+                <button class="emoji-btn">🥶</button>
+                <button class="emoji-btn">😎</button>
+                <button class="emoji-btn">😢</button>
+                <button class="emoji-btn">😠</button>
+            </div>    
+        </div>
+    
+        <div class="response-form mt-3">
+            <p>8. Please create a password (JUST emojis):</p>
+            <input type="text" name="password8" id="response-input-8" class="form-control form-control-lg" required>
+            <div class="emoji-keyboard mt-2" data-input-target="#response-input-8">
+                <button class="emoji-btn">😀</button>
+                <button class="emoji-btn">😂</button>
+                <button class="emoji-btn">😍</button>
+                <button class="emoji-btn">😘</button>
+                <button class="emoji-btn">😡</button>
+                <button class="emoji-btn">🥶</button>
+                <button class="emoji-btn">😎</button>
+                <button class="emoji-btn">😢</button>
+                <button class="emoji-btn">😠</button>
+            </div>    
+            
+        </div>
+
+        <div class="response-form mt-3">
+            <p>9. Please create a password (JUST emojis):</p>
+            <input type="text" name="password9" id="response-input-9" class="form-control form-control-lg" required>
+            
+            <div class="emoji-keyboard mt-2" data-input-target="#response-input-9">
+                <button class="emoji-btn">😀</button>
+                <button class="emoji-btn">😂</button>
+                <button class="emoji-btn">😍</button>
+                <button class="emoji-btn">😘</button>
+                <button class="emoji-btn">😡</button>
+                <button class="emoji-btn">🥶</button>
+                <button class="emoji-btn">😎</button>
+                <button class="emoji-btn">😢</button>
+                <button class="emoji-btn">😠</button>
+            </div>    
+        </div>
+
+        <div class="response-form mt-3">
+            <p>10. Please create a password (JUST emojis):</p>
+            <input type="text" name="password10" id="response-input-10" class="form-control form-control-lg" required>
+            
+            <div class="emoji-keyboard mt-2" data-input-target="#response-input-10">
+                <button class="emoji-btn">😀</button>
+                <button class="emoji-btn">😂</button>
+                <button class="emoji-btn">😍</button>
+                <button class="emoji-btn">😘</button>
+                <button class="emoji-btn">😡</button>
+                <button class="emoji-btn">🥶</button>
+                <button class="emoji-btn">😎</button>
+                <button class="emoji-btn">😢</button>
+                <button class="emoji-btn">😠</button>
+            </div>    
+        </div>
+
+        <div>
+            <h2>  ---  </h2>
+            <h2> Text and Emojie passwords </h2>
+        </div>
+
+        <div class="response-form mt-3">
+            <p>11. Please create a password (BOTH emojis and text):</p>
+            <input type="text" name="password11" id="response-input-11" class="form-control form-control-lg" required>
+            
+            <div class="emoji-keyboard mt-2" data-input-target="#response-input-11">
+                <button class="emoji-btn">😀</button>
+                <button class="emoji-btn">😂</button>
+                <button class="emoji-btn">😍</button>
+                <button class="emoji-btn">😘</button>
+                <button class="emoji-btn">😡</button>
+                <button class="emoji-btn">🥶</button>
+                <button class="emoji-btn">😎</button>
+                <button class="emoji-btn">😢</button>
+                <button class="emoji-btn">😠</button>
+            </div>    
+        </div>
+    
+        <div class="response-form mt-3">
+            <p>12. Please create a password (BOTH emojis and text):</p>
+            <input type="text" name="password12" id="response-input-12" class="form-control form-control-lg" required>
+            
+            <div class="emoji-keyboard mt-2" data-input-target="#response-input-12">
+                <button class="emoji-btn">😀</button>
+                <button class="emoji-btn">😂</button>
+                <button class="emoji-btn">😍</button>
+                <button class="emoji-btn">😘</button>
+                <button class="emoji-btn">😡</button>
+                <button class="emoji-btn">🥶</button>
+                <button class="emoji-btn">😎</button>
+                <button class="emoji-btn">😢</button>
+                <button class="emoji-btn">😠</button>
+            </div>    
+        </div>
+    
+        <div class="response-form mt-3">
+            <p>13. Please create a password (BOTH emojis and text):</p>
+            <input type="text" name="password13" id="response-input-13" class="form-control form-control-lg" required>
+            <div class="emoji-keyboard mt-2" data-input-target="#response-input-13">
+                <button class="emoji-btn">😀</button>
+                <button class="emoji-btn">😂</button>
+                <button class="emoji-btn">😍</button>
+                <button class="emoji-btn">😘</button>
+                <button class="emoji-btn">😡</button>
+                <button class="emoji-btn">🥶</button>
+                <button class="emoji-btn">😎</button>
+                <button class="emoji-btn">😢</button>
+                <button class="emoji-btn">😠</button>
+            </div>    
+            
+        </div>
+
+        <div class="response-form mt-3">
+            <p>14. Please create a password (BOTH emojis and text):</p>
+            <input type="text" name="password14" id="response-input-14" class="form-control form-control-lg" required>
+            
+            <div class="emoji-keyboard mt-2" data-input-target="#response-input-14">
+                <button class="emoji-btn">😀</button>
+                <button class="emoji-btn">😂</button>
+                <button class="emoji-btn">😍</button>
+                <button class="emoji-btn">😘</button>
+                <button class="emoji-btn">😡</button>
+                <button class="emoji-btn">🥶</button>
+                <button class="emoji-btn">😎</button>
+                <button class="emoji-btn">😢</button>
+                <button class="emoji-btn">😠</button>
+            </div>    
+        </div>
+
+        <div class="response-form mt-3">
+            <p>15. Please create a password (BOTH emojis and text):</p>
+            <input type="text" name="password15" id="response-input-15" class="form-control form-control-lg" required>
+            
+            <div class="emoji-keyboard mt-2" data-input-target="#response-input-15">
+                <button class="emoji-btn">😀</button>
+                <button class="emoji-btn">😂</button>
+                <button class="emoji-btn">😍</button>
+                <button class="emoji-btn">😘</button>
+                <button class="emoji-btn">😡</button>
+                <button class="emoji-btn">🥶</button>
+                <button class="emoji-btn">😎</button>
+                <button class="emoji-btn">😢</button>
+                <button class="emoji-btn">😠</button>
+            </div>    
+        </div>
+
+        <button type="submit" class="btn btn-success w-100 mt-1 mb-3">Next</button>
+    </form>
 </div>
+
+<script>
+    var responseForms = document.querySelectorAll('.response-form');
+    
+    //validating forms 6 to 10 for containing only emojis
+    for (var i = 5; i < 10; i++) {
+        var form = responseForms[i];
+        var inputField = form.querySelector('input[type="text"]');
+        inputField.addEventListener('input', function() {
+            var emojiPattern = /[\uD83C-\uDBFF\uDC00-\uDFFF]+/g;
+            var inputValue = this.value;
+            // Check if input value contains only emojis
+            if (!emojiPattern.test(inputValue)) {
+                this.setCustomValidity('Please enter only emojis.');
+            } else {
+                this.setCustomValidity('');
+            }
+        });
+    }
+
+    //can't work out whats going on here, sometimes this validation works, othertimes not....might come back to, but could probably leave this seection out!
+    /*
+    for (var i = 10; i < 15; i++) {
+        var form = responseForms[i];
+        var inputField = form.querySelector('input[type="text"]');
+        inputField.addEventListener('input', function() {
+            var inputValue = this.value;
+            var hasText = /[a-zA-Z]/.test(inputValue);
+            var hasEmoji = /[\uD83C-\uDBFF\uDC00-\uDFFF]+/.test(inputValue);
+            if (hasText && hasEmoji) {
+                this.setCustomValidity('');
+            } else {
+                this.setCustomValidity('Please enter both text and emojis.');
+            }
+        });
+    }
+    */
+</script>
 
 {% endblock %}

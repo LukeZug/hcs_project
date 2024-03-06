@@ -2,10 +2,15 @@
 {% block body %}
 
 <div class="container text-center mt-2">
-    <h1>Part 3) Password Memorability Evaluation</h1>
+    <h1>Part 3: Password Memorability Evaluation</h1>
 
     <form action="{% url 'emoji_password_evaluation:submit_recall_passwords' %}" method="POST">
         {% csrf_token %}
+
+        <div>
+            <h2>  ---  </h2>
+            <h2> Guess the only text passwords </h2>
+        </div>
         
         <div class="response-form mt-3">
             <p>1. Try and recall one of your text-based passwords:</p>
@@ -21,44 +26,26 @@
             <p>3. Try and recall one of your text-based passwords:</p>
             <input type="text" name="guess3" id="response-input-3" class="form-control form-control-lg" required>
         </div>
-    
+
         <div class="response-form mt-3">
-            <p>4. Try and recall one of your emoji-based passwords:</p>
-            <input type="text" name="guess4" id="response-input-4" class="form-control form-control-lg" required>
-            
-            <div class="emoji-keyboard mt-2" data-input-target="#response-input-4">
-                <button class="emoji-btn">😀</button>
-                <button class="emoji-btn">😂</button>
-                <button class="emoji-btn">😍</button>
-                <button class="emoji-btn">😘</button>
-                <button class="emoji-btn">😡</button>
-                <button class="emoji-btn">🥶</button>
-                <button class="emoji-btn">😎</button>
-                <button class="emoji-btn">😢</button>
-                <button class="emoji-btn">😠</button>
-            </div>    
+            <p>4. Try and recall one of your text-based passwords:</p>
+            <input type="text" name="guess2" id="response-input-4" class="form-control form-control-lg" required>
         </div>
     
         <div class="response-form mt-3">
-            <p>5. Try and recall one of your emoji-based passwords:</p>
-            <input type="text" name="guess5" id="response-input-5" class="form-control form-control-lg" required>
-            
-            <div class="emoji-keyboard mt-2" data-input-target="#response-input-5">
-                <button class="emoji-btn">😀</button>
-                <button class="emoji-btn">😂</button>
-                <button class="emoji-btn">😍</button>
-                <button class="emoji-btn">😘</button>
-                <button class="emoji-btn">😡</button>
-                <button class="emoji-btn">🥶</button>
-                <button class="emoji-btn">😎</button>
-                <button class="emoji-btn">😢</button>
-                <button class="emoji-btn">😠</button>
-            </div>    
+            <p>5. Try and recall one of your text-based passwords:</p>
+            <input type="text" name="guess3" id="response-input-5" class="form-control form-control-lg" required>
+        </div>
+
+        <div>
+            <h2>  ---  </h2>
+            <h2> Guess the only Emoji passwords </h2>
         </div>
     
         <div class="response-form mt-3">
             <p>6. Try and recall one of your emoji-based passwords:</p>
             <input type="text" name="guess6" id="response-input-6" class="form-control form-control-lg" required>
+            
             <div class="emoji-keyboard mt-2" data-input-target="#response-input-6">
                 <button class="emoji-btn">😀</button>
                 <button class="emoji-btn">😂</button>
@@ -70,9 +57,167 @@
                 <button class="emoji-btn">😢</button>
                 <button class="emoji-btn">😠</button>
             </div>    
-            
-            <button type="submit" class="btn btn-success w-100 mt-1 mb-3">Finish</button>
         </div>
+    
+        <div class="response-form mt-3">
+            <p>7. Try and recall one of your emoji-based passwords:</p>
+            <input type="text" name="guess7" id="response-input-7" class="form-control form-control-lg" required>
+            
+            <div class="emoji-keyboard mt-2" data-input-target="#response-input-7">
+                <button class="emoji-btn">😀</button>
+                <button class="emoji-btn">😂</button>
+                <button class="emoji-btn">😍</button>
+                <button class="emoji-btn">😘</button>
+                <button class="emoji-btn">😡</button>
+                <button class="emoji-btn">🥶</button>
+                <button class="emoji-btn">😎</button>
+                <button class="emoji-btn">😢</button>
+                <button class="emoji-btn">😠</button>
+            </div>    
+        </div>
+    
+        <div class="response-form mt-3">
+            <p>8. Try and recall one of your emoji-based passwords:</p>
+            <input type="text" name="guess8" id="response-input-8" class="form-control form-control-lg" required>
+            <div class="emoji-keyboard mt-2" data-input-target="#response-input-8">
+                <button class="emoji-btn">😀</button>
+                <button class="emoji-btn">😂</button>
+                <button class="emoji-btn">😍</button>
+                <button class="emoji-btn">😘</button>
+                <button class="emoji-btn">😡</button>
+                <button class="emoji-btn">🥶</button>
+                <button class="emoji-btn">😎</button>
+                <button class="emoji-btn">😢</button>
+                <button class="emoji-btn">😠</button>
+            </div>    
+            
+        </div>
+
+        <div class="response-form mt-3">
+            <p>9. Try and recall one of your emoji-based passwords:</p>
+            <input type="text" name="guess9" id="response-input-9" class="form-control form-control-lg" required>
+            <div class="emoji-keyboard mt-2" data-input-target="#response-input-9">
+                <button class="emoji-btn">😀</button>
+                <button class="emoji-btn">😂</button>
+                <button class="emoji-btn">😍</button>
+                <button class="emoji-btn">😘</button>
+                <button class="emoji-btn">😡</button>
+                <button class="emoji-btn">🥶</button>
+                <button class="emoji-btn">😎</button>
+                <button class="emoji-btn">😢</button>
+                <button class="emoji-btn">😠</button>
+            </div>    
+            
+        </div>
+
+        <div class="response-form mt-3">
+            <p>10. Try and recall one of your emoji-based passwords:</p>
+            <input type="text" name="guess10" id="response-input-10" class="form-control form-control-lg" required>
+            <div class="emoji-keyboard mt-2" data-input-target="#response-input-10">
+                <button class="emoji-btn">😀</button>
+                <button class="emoji-btn">😂</button>
+                <button class="emoji-btn">😍</button>
+                <button class="emoji-btn">😘</button>
+                <button class="emoji-btn">😡</button>
+                <button class="emoji-btn">🥶</button>
+                <button class="emoji-btn">😎</button>
+                <button class="emoji-btn">😢</button>
+                <button class="emoji-btn">😠</button>
+            </div>    
+            
+        </div>
+
+        <div>
+            <h2>  ---  </h2>
+            <h2> Guess the emojie and text passwords </h2>
+        </div>
+
+        <div class="response-form mt-3">
+            <p>11. Try and recall one of your emoji and text based passwords:</p>
+            <input type="text" name="guess11" id="response-input-11" class="form-control form-control-lg" required>
+            
+            <div class="emoji-keyboard mt-2" data-input-target="#response-input-11">
+                <button class="emoji-btn">😀</button>
+                <button class="emoji-btn">😂</button>
+                <button class="emoji-btn">😍</button>
+                <button class="emoji-btn">😘</button>
+                <button class="emoji-btn">😡</button>
+                <button class="emoji-btn">🥶</button>
+                <button class="emoji-btn">😎</button>
+                <button class="emoji-btn">😢</button>
+                <button class="emoji-btn">😠</button>
+            </div>    
+        </div>
+    
+        <div class="response-form mt-3">
+            <p>12. Try and recall one of your emoji and text based passwords:</p>
+            <input type="text" name="guess12" id="response-input-12" class="form-control form-control-lg" required>
+            
+            <div class="emoji-keyboard mt-2" data-input-target="#response-input-12">
+                <button class="emoji-btn">😀</button>
+                <button class="emoji-btn">😂</button>
+                <button class="emoji-btn">😍</button>
+                <button class="emoji-btn">😘</button>
+                <button class="emoji-btn">😡</button>
+                <button class="emoji-btn">🥶</button>
+                <button class="emoji-btn">😎</button>
+                <button class="emoji-btn">😢</button>
+                <button class="emoji-btn">😠</button>
+            </div>    
+        </div>
+    
+        <div class="response-form mt-3">
+            <p>13. Try and recall one of your emoji and text based passwords:</p>
+            <input type="text" name="guess13" id="response-input-13" class="form-control form-control-lg" required>
+            <div class="emoji-keyboard mt-2" data-input-target="#response-input-13">
+                <button class="emoji-btn">😀</button>
+                <button class="emoji-btn">😂</button>
+                <button class="emoji-btn">😍</button>
+                <button class="emoji-btn">😘</button>
+                <button class="emoji-btn">😡</button>
+                <button class="emoji-btn">🥶</button>
+                <button class="emoji-btn">😎</button>
+                <button class="emoji-btn">😢</button>
+                <button class="emoji-btn">😠</button>
+            </div>    
+            
+        </div>
+
+        <div class="response-form mt-3">
+            <p>14. Try and recall one of your emoji and text based passwords:</p>
+            <input type="text" name="guess14" id="response-input-14" class="form-control form-control-lg" required>
+            <div class="emoji-keyboard mt-2" data-input-target="#response-input-14">
+                <button class="emoji-btn">😀</button>
+                <button class="emoji-btn">😂</button>
+                <button class="emoji-btn">😍</button>
+                <button class="emoji-btn">😘</button>
+                <button class="emoji-btn">😡</button>
+                <button class="emoji-btn">🥶</button>
+                <button class="emoji-btn">😎</button>
+                <button class="emoji-btn">😢</button>
+                <button class="emoji-btn">😠</button>
+            </div>    
+            
+        </div>
+
+        <div class="response-form mt-3">
+            <p>15. Try and recall one of your emoji and text based passwords:</p>
+            <input type="text" name="guess15" id="response-input-15" class="form-control form-control-lg" required>
+            <div class="emoji-keyboard mt-2" data-input-target="#response-input-15">
+                <button class="emoji-btn">😀</button>
+                <button class="emoji-btn">😂</button>
+                <button class="emoji-btn">😍</button>
+                <button class="emoji-btn">😘</button>
+                <button class="emoji-btn">😡</button>
+                <button class="emoji-btn">🥶</button>
+                <button class="emoji-btn">😎</button>
+                <button class="emoji-btn">😢</button>
+                <button class="emoji-btn">😠</button>
+            </div>    
+            
+        </div>
+
+        <button type="submit" class="btn btn-success w-100 mt-1 mb-3">Finish</button>
     </form>
     
 </div>

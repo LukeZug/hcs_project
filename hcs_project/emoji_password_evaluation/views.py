@@ -75,3 +75,6 @@ def submit_surfer_guesses(request):
 
 def finished(request):
     return render(request, 'emoji_password_evaluation/finished.html', context={})
+
+def instructions_page(request):
+    return render(request, 'emoji_password_evaluation/instructions.html')
