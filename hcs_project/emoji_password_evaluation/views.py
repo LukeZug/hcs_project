@@ -44,7 +44,7 @@ def submit_recall_passwords(request):
             return HttpResponse("Identifier not found.")
 
         # Check each guess
-        for i in range(1, 7):
+        for i in range(1, 16):  # Update loop range
             guess_key = f'guess{i}'
             guess = request.POST.get(guess_key, '')
 
