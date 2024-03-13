@@ -7,12 +7,16 @@
 
     <form action="{% url 'emoji_password_evaluation:submit_surfer_guesses' %}" method="POST">
         {% csrf_token %}
-    
+        <div>
+            <h2>  ---  </h2>
+            <h2> Right-Side Shoulder Surfing </h2>
+        </div>
         <div class="response-form mt-3">
             <p>1. Watch the following video and try and guess the entered password:</p>
 
             <!-- Use {% static 'videos/vid1.mp4' %} to embed the video -->
-            <video src="#" controls class="w-100"></video>
+            <video src="{% static 'videos/right_text.mp4' %}" controls class="w-100"></video>
+
 
             <input type="text" name="password1" id="response-input-1" class="form-control form-control-lg" required>
             
@@ -33,7 +37,8 @@
             <p>2. Watch the following video and try and guess the entered password:</p>
 
             <!-- Use {% static 'videos/vid1.mp4' %} to embed the video -->
-            <video src="#" controls class="w-100"></video>
+            <video src="{% static 'videos/right_emojis.mp4' %}" controls class="w-100"></video>
+
 
             <input type="text" name="password2" id="response-input-2" class="form-control form-control-lg" required>
             
@@ -54,7 +59,8 @@
             <p>3. Watch the following video and try and guess the entered password:</p>
 
             <!-- Use {% static 'videos/vid1.mp4' %} to embed the video -->
-            <video src="#" controls class="w-100"></video>
+            <video src="{% static 'videos/right_mixed.mp4' %}" controls class="w-100"></video>
+
 
             <input type="text" name="password3" id="response-input-3" class="form-control form-control-lg" required>
             <div class="emoji-keyboard mt-2" data-input-target="#response-input-3">
@@ -70,7 +76,144 @@
             </div>    
             
         </div>
+        <div>
+            <h2>  ---  </h2>
+            <h2> Middle Shoulder Surfing </h2>
+        </div>
+        <div class="response-form mt-3">
+            <p>1. Watch the following video and try and guess the entered password:</p>
 
+            <!-- Use {% static 'videos/vid1.mp4' %} to embed the video -->
+            <video src="{% static 'videos/middle_text.mp4' %}" controls class="w-100"></video>
+
+
+            <input type="text" name="password1" id="response-input-1" class="form-control form-control-lg" required>
+            
+            <div class="emoji-keyboard mt-2" data-input-target="#response-input-1">
+                <button class="emoji-btn">😀</button>
+                <button class="emoji-btn">😂</button>
+                <button class="emoji-btn">😍</button>
+                <button class="emoji-btn">😘</button>
+                <button class="emoji-btn">😡</button>
+                <button class="emoji-btn">🥶</button>
+                <button class="emoji-btn">😎</button>
+                <button class="emoji-btn">😢</button>
+                <button class="emoji-btn">😠</button>
+            </div>    
+        </div>
+    
+        <div class="response-form mt-3">
+            <p>2. Watch the following video and try and guess the entered password:</p>
+
+            <!-- Use {% static 'videos/vid1.mp4' %} to embed the video -->
+            <video src="{% static 'videos/middle_emojis.mp4' %}" controls class="w-100"></video>
+
+
+            <input type="text" name="password2" id="response-input-2" class="form-control form-control-lg" required>
+            
+            <div class="emoji-keyboard mt-2" data-input-target="#response-input-2">
+                <button class="emoji-btn">😀</button>
+                <button class="emoji-btn">😂</button>
+                <button class="emoji-btn">😍</button>
+                <button class="emoji-btn">😘</button>
+                <button class="emoji-btn">😡</button>
+                <button class="emoji-btn">🥶</button>
+                <button class="emoji-btn">😎</button>
+                <button class="emoji-btn">😢</button>
+                <button class="emoji-btn">😠</button>
+            </div>    
+        </div>
+    
+        <div class="response-form mt-3">
+            <p>3. Watch the following video and try and guess the entered password:</p>
+
+            <!-- Use {% static 'videos/vid1.mp4' %} to embed the video -->
+            <video src="{% static 'videos/middle_mixed.mp4' %}" controls class="w-100"></video>
+
+
+            <input type="text" name="password3" id="response-input-3" class="form-control form-control-lg" required>
+            <div class="emoji-keyboard mt-2" data-input-target="#response-input-3">
+                <button class="emoji-btn">😀</button>
+                <button class="emoji-btn">😂</button>
+                <button class="emoji-btn">😍</button>
+                <button class="emoji-btn">😘</button>
+                <button class="emoji-btn">😡</button>
+                <button class="emoji-btn">🥶</button>
+                <button class="emoji-btn">😎</button>
+                <button class="emoji-btn">😢</button>
+                <button class="emoji-btn">😠</button>
+            </div>    
+            
+        </div>
+        <div>
+            <h2>  ---  </h2>
+            <h2> Left-Side Shoulder Surfing </h2>
+        </div>
+        <div class="response-form mt-3">
+            <p>1. Watch the following video and try and guess the entered password:</p>
+
+            <!-- Use {% static 'videos/vid1.mp4' %} to embed the video -->
+            <video src="{% static 'videos/left_text.mp4' %}" controls class="w-100"></video>
+
+
+            <input type="text" name="password1" id="response-input-1" class="form-control form-control-lg" required>
+            
+            <div class="emoji-keyboard mt-2" data-input-target="#response-input-1">
+                <button class="emoji-btn">😀</button>
+                <button class="emoji-btn">😂</button>
+                <button class="emoji-btn">😍</button>
+                <button class="emoji-btn">😘</button>
+                <button class="emoji-btn">😡</button>
+                <button class="emoji-btn">🥶</button>
+                <button class="emoji-btn">😎</button>
+                <button class="emoji-btn">😢</button>
+                <button class="emoji-btn">😠</button>
+            </div>    
+        </div>
+    
+        <div class="response-form mt-3">
+            <p>2. Watch the following video and try and guess the entered password:</p>
+
+            <!-- Use {% static 'videos/vid1.mp4' %} to embed the video -->
+            <video src="{% static 'videos/left_emojis.mp4' %}" controls class="w-100"></video>
+
+
+            <input type="text" name="password2" id="response-input-2" class="form-control form-control-lg" required>
+            
+            <div class="emoji-keyboard mt-2" data-input-target="#response-input-2">
+                <button class="emoji-btn">😀</button>
+                <button class="emoji-btn">😂</button>
+                <button class="emoji-btn">😍</button>
+                <button class="emoji-btn">😘</button>
+                <button class="emoji-btn">😡</button>
+                <button class="emoji-btn">🥶</button>
+                <button class="emoji-btn">😎</button>
+                <button class="emoji-btn">😢</button>
+                <button class="emoji-btn">😠</button>
+            </div>    
+        </div>
+    
+        <div class="response-form mt-3">
+            <p>3. Watch the following video and try and guess the entered password:</p>
+
+            <!-- Use {% static 'videos/vid1.mp4' %} to embed the video -->
+            <video src="{% static 'videos/left_mixed.mp4' %}" controls class="w-100"></video>
+
+
+            <input type="text" name="password3" id="response-input-3" class="form-control form-control-lg" required>
+            <div class="emoji-keyboard mt-2" data-input-target="#response-input-3">
+                <button class="emoji-btn">😀</button>
+                <button class="emoji-btn">😂</button>
+                <button class="emoji-btn">😍</button>
+                <button class="emoji-btn">😘</button>
+                <button class="emoji-btn">😡</button>
+                <button class="emoji-btn">🥶</button>
+                <button class="emoji-btn">😎</button>
+                <button class="emoji-btn">😢</button>
+                <button class="emoji-btn">😠</button>
+            </div>    
+            
+        </div>
         <div>
             <h2>  ---  </h2>
             <h2> GREAT WORK! To give the memorability test some more difficulty we're going to stop you here, for a few more minutes. Feel free to leave and come back! </h2>
